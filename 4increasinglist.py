@@ -1,10 +1,12 @@
 def func(num1, num2):
+    l = [num1, num2]
     if num1 > num2:
-        return list(range(num2, num1))
+        l.reverse()
+        return list(range(*l))
     elif num1 < num2:
-        return list(range(num1, num2))
-    else:
-        print("Wrong type of values or not enough numbers to iterate trought")
+        return list(range(*l))
+    elif num1 == num2:
+        return [num1]
 
 print(func(10, 2))
 print(func(5, 5))
